@@ -69,4 +69,4 @@
 
 ✍️ Show that you shared your process on Twitter or LinkedIn
 
-[link](link)
+[Twitter](https://twitter.com/alebaffa/status/1331592965316198402)
