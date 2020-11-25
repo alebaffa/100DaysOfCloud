@@ -1,49 +1,69 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
+![header image](resources/regions.png)
 
-# New post title here
-
-## Introduction
-
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
-
-## Prerequisite
-
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
-
-## Use Case
-
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+# AWS Regions and Availability Zones
 
 ## Cloud Research
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
+### Regions
+- It is a geographical area that consists of 2 or more AZ
+- Regions are spread all around the world
+- Regions are identified by a code followed by a letter identifier; for example, `np-northeast-1` (Tokyo region)
 
-## Try yourself
+### Availability Zone (AZ)
+- One or more data centers that are close enough to each other can be considered as 1 Availability Zone
+- Availability Zones are important because they can ensure business and operational continuity in case of disasters to one of the data centers included in the AZ. Each data center inside a AZ has its own building, power supply, networking and connectivity.
+- All AZs are interconnected with high-bandwidth and low latency network. The traffic between AZ is encrypted.
+- AZ are within 100km from each other
+- AZ are identified by the Region code followed by a letter. Here below an example of all the AZs in the Tokyo (`ap-northeast-1`) region:
+```
+> aws ec2 describe-availability-zones --region ap-northeast-1
 
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
+{
+    "AvailabilityZones": [
+        {
+            "State": "available",
+            "OptInStatus": "opt-in-not-required",
+            "Messages": [],
+            "RegionName": "ap-northeast-1",
+            "ZoneName": "ap-northeast-1a",
+            "ZoneId": "apne1-az4",
+            "GroupName": "ap-northeast-1",
+            "NetworkBorderGroup": "ap-northeast-1",
+            "ZoneType": "availability-zone"
+        },
+        {
+            "State": "available",
+            "OptInStatus": "opt-in-not-required",
+            "Messages": [],
+            "RegionName": "ap-northeast-1",
+            "ZoneName": "ap-northeast-1c",
+            "ZoneId": "apne1-az1",
+            "GroupName": "ap-northeast-1",
+            "NetworkBorderGroup": "ap-northeast-1",
+            "ZoneType": "availability-zone"
+        },
+        {
+            "State": "available",
+            "OptInStatus": "opt-in-not-required",
+            "Messages": [],
+            "RegionName": "ap-northeast-1",
+            "ZoneName": "ap-northeast-1d",
+            "ZoneId": "apne1-az2",
+            "GroupName": "ap-northeast-1",
+            "NetworkBorderGroup": "ap-northeast-1",
+            "ZoneType": "availability-zone"
+        }
+    ]
+}
+```
 
-### Step 1 — Summary of Step
+### Edge locations
+- They are endpoints which are used for caching content
+- There exist more edge locations than regions
+- They consists of CloudFront, Amazon's Content Delivery Network (CDN)
 
-![Screenshot](https://via.placeholder.com/500x300)
-
-### Step 1 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-### Step 3 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-## ☁️ Cloud Outcome
-
-✍️ (Result) Describe your personal outcome, and lessons learned.
-
-## Next Steps
-
-✍️ Describe what you think you think you want to do next.
+## Resources
+- [AWS docs - Regions and Zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html)
 
 ## Social Proof
 
